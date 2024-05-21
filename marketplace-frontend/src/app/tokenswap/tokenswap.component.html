@@ -1,0 +1,29 @@
+<div class="swap-section">
+    <div class="container mt-3 d-flex align-items-center justify-content-center h-100">
+        <div class="swap-inner">
+            <h3 class="fw-bold">ETH to IC</h3>
+            <input type="text" [(ngModel)]="etherAmount" (change)="onValue($event)" placeholder="Enter Ether amount" />
+            <p>Token amount for {{ etherAmount }} Eth: {{ ethToTokenValue }} token</p>
+            <div>
+                <button (click)="swapEther()">Swap Ether for Tokens</button>
+            </div>
+            <br />
+            <h3 class="fw-bold">IC to ETH</h3>
+            <input type="text" [(ngModel)]="TokenAmount" (change)="onTokenValue($event)"
+                placeholder="Enter Token amount" />
+            <p>Eth amount for {{ TokenAmount }} token: {{ tokentoEthValue }} eth</p>
+            <div>
+                <button (click)="swapToken()">Swap Token for ethers</button>
+            </div>
+        </div>  
+
+        <div class="card rounded-4 back w-25 shadow p-4 d-flex h-100">
+            <div class="d-flex h-100">
+                <p class="fw-bold">Eth balance: {{ ethBalance }} Eth</p>
+            </div>
+            <div class="d-flex h-100">
+                <p class="fw-bolder">Infinity Coin balance: {{ tokenBalance }} IC</p>
+            </div>
+        </div>
+    </div>
+</div>

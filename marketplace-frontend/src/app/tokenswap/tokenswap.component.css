@@ -1,0 +1,43 @@
+/* Styles for the container */
+.container {
+    margin-bottom: 20px;
+  }
+  
+  /* Styles for the heading */
+  h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for the input fields */
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  /* Styles for the paragraph */
+  p {
+    font-size: 16px;
+  }
+  
+  /* Styles for the buttons */
+  button {
+    padding: 8px 20px;
+    font-size: 16px;
+    background-color: blueviolet;
+    color: #fff;
+    margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: blueviolet;
+  }
+
+  .card{
+    background-color: #eee;
+  }

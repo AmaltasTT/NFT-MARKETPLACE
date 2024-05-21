@@ -1,0 +1,27 @@
+<section class="header"><div class="container"><nav class="nav">
+    <h1 routerLink="/">E-COMM</h1>
+    <ul *ngIf="!walletConnected">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/explore">Explore</a></li>
+        <li><a routerLink="/create-nft">Create NFT</a></li>
+        <!-- <li><a routerLink="/swap">Swap Token</a></li> -->
+    </ul>
+
+    <ul *ngIf="walletConnected">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/" (click)="logout()">Logout</a></li>
+        <li><a routerLink="/explore">Explore</a></li>
+        <li><a routerLink="/create-nft">create-nft</a></li>
+        <li><a routerLink="/swap">Swap Token</a></li>
+        <li><a routerLink="/deal">NFT-Deal</a></li>
+    </ul>
+    <div class="nav-connect" *ngIf="!walletConnected">
+        <button class="btn " (click)="buttonNameToggle = !buttonNameToggle; connectMetamask()">{{buttonName}}</button>
+    </div>
+    <div class="nav-connect" *ngIf="walletConnected">
+       <a routerLink="/profile">Profile: {{shortAddress}} </a>
+    </div>
+</nav>
+</div>
+
+</section>

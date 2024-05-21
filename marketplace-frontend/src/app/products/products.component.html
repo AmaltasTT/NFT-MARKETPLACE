@@ -1,0 +1,46 @@
+<div class="card-container">
+  <div class="container">
+    <div>
+      <h3>Listed Items</h3>
+    </div>
+    <div class="products">
+      <div *ngFor="let product of listedNfts" class="product-card">
+        <img [src]="product.imageUrl" alt="">
+        <div class="card-details" *ngIf="product.listingType == '0'">
+          <h3>Id: {{ product.nftId }}</h3>
+          <h3> Price: {{ product.price }} eth</h3>
+          <!-- <button (click)="buyProduct(product.id,product.price)" class="buy-button">Buy</button> -->
+          <button class="buy-button" (click)="routeToBuy(product._id, product.nftId)">Buy now</button>
+        </div>
+        <div class="card-details" *ngIf="product.listingType == '1'">
+          <h3>Id: {{ product.nftId }}</h3>
+          <h3> Price: {{ product.price }} eth</h3>
+          <!-- <button (click)="buyProduct(product.id,product.price)" class="buy-button">Buy</button> -->
+          <button class="buy-button" (click)="routeToAuction(product._id, product.nftId)">Place Bid</button>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="listedNfts == undefined">
+      Currently NFTs are not listed for sale!!!
+    </div>
+
+    <div class="mt-3">
+      <h3>Explore Items</h3>
+    </div>
+    <div class="products">
+      <div *ngFor="let product of products" class="product-card">
+        <img [src]="product.imageUrl" alt="">
+        <div class="card-details">
+          <h3>Id: {{ product.nftId }}</h3>
+          <!-- <button (click)="buyProduct(product.id,product.price)" class="buy-button">Buy</button> -->
+          <button class="buy-button" (click)="nftDetail(product._id, product.nftId)">Explore</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="product">
+    <button (click)="setData()">set Data</button>
+    <button (click)="getTokenBalance()">get Data</button>
+</div> -->

@@ -1,0 +1,11 @@
+<div class="form-nft">
+  <div class="container">
+  <form class="common-form">
+    <input type="file" class="form-control my-2" id="inputGroupFile01" (change)="onSelectFile($event)">
+    <input class="form-control my-2" [(ngModel)]="name" type="text" name="name" placeholder="Enter NFT Title">
+    <input class="form-control my-2" type="text" [(ngModel)]="description" name="description" placeholder="NFT description">
+
+    <button (click)="uploadFile()" class=" btn my-2">Create NFT</button>
+  </form>
+</div>
+</div>

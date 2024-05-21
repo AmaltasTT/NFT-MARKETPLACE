@@ -1,0 +1,26 @@
+<div class="form-outer">
+    <div class="container">
+        <div class="form-inner">
+            <div class="card" *ngFor="let nft of nfts">
+                <div *ngIf="nft.nftId == nftId">
+                    <img class="w-75" [src]="nft.imageUrl" alt="" srcset="">
+                </div>
+            </div>
+            <form class="list-form" (ngSubmit)="listNft(objectId)">
+                <!-- <input type="text" id="nft" name="nft" [(ngModel)]="nftAddress" placeholder="NFT Address" required> -->
+                <label for="expiryTime">NFT ID</label>
+                <input type="text" id="nftId" name="nftId" [(ngModel)]="nftId" placeholder="NFT ID" required>
+                <label for="expiryTime">Price:</label>
+                <input type="text" id="price" name="price" [(ngModel)]="price" placeholder="Price" required>
+                <label for="listingType">Expiry Type:</label>
+                <input type="datetime-local" id="expiryTime" name="expiryTime" [(ngModel)]="expiryTime" required>
+                <label for="listingType">Listing Type:</label>
+                <select id="listingType" name="listingType" [(ngModel)]="listingType" required>
+                    <option value="0">Fixed Price</option>
+                    <option value="1">Auction</option>
+                </select>
+                <button type="submit" class="form-button listNft">List NFT</button>
+            </form>
+        </div>
+    </div>
+</div>

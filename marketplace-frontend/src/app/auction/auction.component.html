@@ -1,0 +1,29 @@
+<div class="form-outer">
+    <div class="container mt-3 d-flex align-items-center justify-content-center h-100">
+        <div class="form-inner border w-25 shadow m-5 p-4 d-flex align-items-center justify-content-center h-100">
+            <form class="list-form">
+                <label for="expiryTime">NFT ID</label>
+                <input type="text" id="nftId" name="nftId" [(ngModel)]="nftId" placeholder="NFT ID" required>
+                <div>
+                    <label for="expiryTime">Eth Amount</label>
+                    <input type="text" id="ethAmount" name="ethAmount" [(ngModel)]="ethAmount" placeholder="ETH Amount"
+                        required>
+                </div>
+
+                <button type="submit" class="form-button listNft" (click)="placeBid()">Place Bid</button>
+            </form>
+        </div>
+
+        <div class="card rounded-4 back w-25 shadow m-3 p-4 d-flex h-100">
+            <div class="d-flex  h-100">
+                <p>Initial NFT price: {{initialPrice}} Eth</p>
+            </div>
+            <div class="d-flex h-100">
+                <p>Last Bid price: {{lastBidPrice}} Eth</p>
+            </div>
+            <div class="d-flex h-100">
+                <p>Current Bid price: {{CurrentBidPrice}} Eth</p>
+            </div>
+        </div>
+    </div>
+</div>

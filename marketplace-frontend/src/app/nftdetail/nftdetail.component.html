@@ -1,0 +1,46 @@
+<div class="container d-flex align-items-center justify-content-center h-100">
+    <div class="card mb-3 mt-5 " style="max-height: 1000px; max-width: 75%;">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <div *ngFor="let nft of nfts">
+                    <div *ngIf="nft.nftId == nftId" class="p-3">
+                        <!-- <img src="" alt="" srcset=""> -->
+                        <img [src]="nft.imageUrl" class="img-fluid rounded-start" alt="...">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.</p>
+                    <div *ngIf="isOwner">
+                    <div *ngFor="let list of listedNft">
+                        <div *ngIf="list.nftId == nftId && list.expiryTime > date && list.listingType == 0">
+                            <button class="btn text-white button w-50" (click)="cancelListing()">Cancel Listing</button>
+                        </div>  
+                        <div *ngIf="list.nftId == nftId && list.expiryTime > date && list.listingType == 1">
+                            <button class="btn text-white button w-50" (click)="cancelListing()">Cancel Auction</button>
+                        </div>  
+                        <div *ngIf="list.nftId == nftId && list.expiryTime < date && list.listingType == 0">
+                            <button class="btn text-white button w-50" (click)="listNFT()">List Nft</button>
+                        </div>
+                        <div *ngIf="list.nftId == nftId && list.expiryTime < date && list.listingType == 1 && this.auction">
+                            <button class="btn text-white button w-50" (click)="transfer()">Transfer Nft</button>
+                        </div>
+                        <div *ngIf="list.nftId == nftId && list.expiryTime < date && list.listingType == 1 && !this.auction">
+                            <button class="btn text-white button w-50" (click)="listNFT()">List Nft</button>
+                        </div>
+                        <div *ngIf="list.nftId == nftId && list.expiryTime < date && list.status === 'NFT sold'">
+                            <button class="btn text-white button w-50" (click)="listNFT()">List Nft</button>
+                        </div>
+                    </div>
+                    <div *ngIf="!checkIsListed()">
+                        <button class="btn text-white button w-50" (click)="listNFT()">List Nft</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+
+<div class="card-container">
+    <div class="container">
+        <div class="products">
+    <div *ngFor="let nft of nfts" class="product-card">
+        <img [src]="nft.imageUrl" alt="">
+        <div class="card-details">
+            <h5>NFT-ID: {{ nft.nftId }}</h5>
+            <div *ngIf="!isListed">
+
+            </div>
+            <button class="buy-button" (click)="nftDetail(nft._id,nft.nftId)">Explore</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>

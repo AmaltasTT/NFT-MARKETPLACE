@@ -1,0 +1,23 @@
+<div class="home-banner">
+    <img src="https://themedox.com/mykd/wp-content/uploads/2023/10/breadcrumb_bg01.jpg">    
+    <div class="overlay-text">NFT Market Place</div>
+</div>
+
+<div class="card-container">
+    <div class="container">
+      <div class="products">
+        <div *ngFor="let product of products" class="product-card">
+          <img [src]="product.imageUrl" alt="">
+          <div class="card-details">
+            <p>ID: {{product.nftId}}</p>
+            <button class="buy-button" routerLink="/explore"> Explore</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <div class="product">
+      <button (click)="setData()">set Data</button>
+      <button (click)="getTokenBalance()">get Data</button>
+  </div> -->
